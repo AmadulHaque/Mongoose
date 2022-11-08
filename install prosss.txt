@@ -1,0 +1,19 @@
+
+<<<<<  Rest API development  package  >>>>>>>>>>
+=========file 	="=  ==install 
+1/ package.json ="= npm init --y
+2/ expres.js   	="=  npm install express
+3/body parser  	="= npm i body-parser
+4/cookie-parser ="=  npm i cookie-parser
+5/ multer    	="= npm install --save multer
+6/jwt 	    	="=   npm i jsonwebtoken
+8/mysql  	="= npm i mysql
+9/mongoose 	="= npm i mongoose
+10/dotenv	="= npm i dotenv
+11/cors Middleware ="= npm i cors
+12/express-mongo-sanitize ="= npm i express-mongo-sanitize
+13/express-rate-limit ="= npm i express-rate-limit
+14/helmet 	 ="= npm i helmet
+15/hpp 		="= npm i hpp
+16/xss-clean  ="= npm i xss-clean
+17/nodemon  ="= npm i nodemon

@@ -1,6 +1,7 @@
 const express =  require('express');
 const  router = require('./src/route/api')
 const app =new express();
+const bodyParser = require('body-parser');
 
 
 // security middleware require
@@ -10,7 +11,7 @@ const cors  =require('cors');
 const helmet = require('helmet');
 const hpp  =require('hpp');
 const xss  =require('xss-clean');
-
+const mongoose = require('mongoose');
 
 // security middleware implement
 app.use(mongoSanitize());
@@ -18,7 +19,7 @@ app.use(cors());
 app.use(helmet());
 app.use(hpp());
 app.use(xss());
-
+app.use(bodyParser.json());
 // rateLimit
 const limiter = rateLimit({
     windowMs: 3 * 60 * 1000, // 15 minutes
@@ -28,10 +29,15 @@ const limiter = rateLimit({
 })
 app.use(limiter);
 
+// database connection mongoose
 
+let URI ="mongodb://127.0.0.1:27017/Schools";
+let OPTION ={user:'',pass:''};
 
-
-
+mongoose.connect(URI,OPTION,(error)=>{
+    console.log("connection Success");
+    // console.log(error);
+})
 app.use("/api/v1",router);
 
 // unified  route

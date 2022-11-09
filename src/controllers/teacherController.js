@@ -16,7 +16,21 @@ exports.InsertTeacher =(req,res)=> {
         }
     })
 
-
-
-
+}
+exports.ReadTeacher = (req,res) =>{
+    let query = {};
+    let item = 'Name Position Salary'
+    TeacherModel.find(query,item,function (error,data){
+        if (error){
+            res.status('400').json({
+                status:"error",
+                message:error,
+            });
+        }else{
+            res.status('200').json({
+                status:"success",
+                message:data,
+            });
+        }
+    })
 }

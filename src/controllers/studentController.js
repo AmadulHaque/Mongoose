@@ -53,3 +53,22 @@ exports.UpdateStudent =(req,res)=>{
         }
     })
 }
+
+exports.RemoveStudent = (req,res) =>{
+    let id = req.params.id;
+    let query = { _id:id };
+    studentModal.remove(query,(err,data)=>{
+        if (err){
+            res.status('402').json({
+                status:"fail",
+                data:err,
+            });
+        }else{
+            res.status('200').json({
+                status:"success",
+                data:data,
+            });
+        }
+
+    })
+}

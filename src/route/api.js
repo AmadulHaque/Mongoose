@@ -10,13 +10,14 @@ router.post('/hello-post',Hello.HelloPost);
 
 
 
-/// mongoose data insert
+/// mongoose data insert student
 router.post('/dataInsert',StudentController.InsertData);
-/// mongoose data get
+/// mongoose data get  student
 router.get('/student',StudentController.ReadStudent);
-/// mongoose data update
+/// mongoose data update student
 router.post('/student-update/:id',StudentController.UpdateStudent);
-
+/// mongoose data remove student
+router.get('/student-remove/:id',StudentController.RemoveStudent);
 
 
 /// mongoose data insert Teacher

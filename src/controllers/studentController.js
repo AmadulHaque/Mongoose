@@ -33,3 +33,23 @@ exports.ReadStudent = (req,res) =>{
         }
     });
 }
+
+
+exports.UpdateStudent =(req,res)=>{
+    let id = req.params.id;
+    let query = { _id:id };
+    let reqBody = req.body;
+    studentModal.updateOne(query,reqBody,(err,data)=>{
+        if (err){
+            res.status('401').json({
+                status:"error",
+                data:err,
+            });
+        }else{
+            res.status('200').json({
+                status:"success",
+                data:data,
+            });
+        }
+    })
+}

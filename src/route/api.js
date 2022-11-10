@@ -14,6 +14,9 @@ router.post('/hello-post',Hello.HelloPost);
 router.post('/dataInsert',StudentController.InsertData);
 /// mongoose data get
 router.get('/student',StudentController.ReadStudent);
+/// mongoose data update
+router.post('/student-update/:id',StudentController.UpdateStudent);
+
 
 
 /// mongoose data insert Teacher
